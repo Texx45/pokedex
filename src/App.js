@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import BestPokemon from "./Components/BestPokemon";
+import CaughtPokemon from "./Components/CaughtPokemon";
+import Logo from "./Components/Logo";
+const abilities = ["Anticipation", "Adaptability", "Run-Away", "Run-Away"];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Logo appName="Pokedex" />;
+      <BestPokemon powers={abilities} />
+      <CaughtPokemon />
     </div>
   );
 }
