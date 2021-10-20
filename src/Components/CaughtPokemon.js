@@ -3,11 +3,15 @@ const useState = React.useState;
 
 function CaughtPokemon({ date }) {
   let [caught, setCaught] = useState([]);
+  let [pokemonNameInput, setPokemonNameInput] = useState("");
+
+  function handleInputChange(event) {
+    setPokemonNameInput(event.target.value);
+  }
 
   function catchPokemon() {
-    let newPokemon = ["Meow", "Chicken", "Ditto", "Mewtwo"];
-    const randomPokemon = Math.floor(Math.random() * newPokemon.length);
-    setCaught(caught.concat(newPokemon[randomPokemon]));
+    setCaught(caught.concat(pokemonNameInput));
+    setPokemonNameInput("");
     console.log(caught);
   }
 
@@ -16,6 +20,11 @@ function CaughtPokemon({ date }) {
       <p>
         Caught {caught.length} Pokemon on {date}
       </p>
+      <input
+        value={pokemonNameInput}
+        type="text"
+        onChange={handleInputChange}
+      />
       <button onClick={catchPokemon}>Catch Pokemon</button>
       <ul>
         {caught.map((pokemon, index) => {
