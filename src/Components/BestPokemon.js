@@ -12,5 +12,3 @@ function BestPokemon(props) {
 }
 
 export default BestPokemon;
-
-// Completed
